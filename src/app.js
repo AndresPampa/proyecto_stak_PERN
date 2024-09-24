@@ -1,1 +1,29 @@
 // Codigo de express o codigo del servidor
+import express from "express";
+import morgan from "morgan";
+
+const app = express();
+
+app.use(morgan("dev")); //Mensajes mas limpios y cortos
+app.use(express.json());//COnvertir todas las petisiones en formato json
+app.use(express.urlencoded({extended: false})); //para codificar y le decimos que la extencion de formularion la ponemos en false porque son cortos, si son grandes iria en true
+
+
+app.get("/", (req, res) => res.json({message: "Bienvenido a mi proyecto"})); //Para devolver una respuesta
+
+// app.get("/test", (req, res) => {
+//     throw new Error('Error Custom');
+//     res.send('test');
+// });
+
+//Manejo de errores
+app.use((err, req, res, next) => {
+    res.status(500).json({
+        status: "error",
+        message: err.message 
+    })
+})
+
+
+//Exportamos la app para usarla como modulo
+export default app;
