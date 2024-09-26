@@ -8,7 +8,7 @@ const app = express();
 
 //Middlewares
 app.use(morgan("dev")); //Mensajes mas limpios y cortos
-app.use(express.json());//COnvertir todas las petisiones en formato json
+app.use(express.json());//Convertir todas las petisiones en formato json
 app.use(express.urlencoded({extended: false})); //para codificar y le decimos que la extencion de formularion la ponemos en false porque son cortos, si son grandes iria en true
 
 

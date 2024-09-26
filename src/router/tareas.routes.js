@@ -1,9 +1,12 @@
-import { Router } from "express";
-import {listarTareas} from "../controllers/tareas.controller.js";
-import {listarTarea} from "../controllers/tareas.controller.js";
-import {crearTarea} from "../controllers/tareas.controller.js";
-import {actualizarTarea} from "../controllers/tareas.controller.js";
-import {eliminarTarea} from "../controllers/tareas.controller.js";
+// import { Router } from "express";
+import Router from "express-promise-router";
+import {listarTareas, listarTarea, crearTarea, actualizarTarea, eliminarTarea} from "../controllers/tareas.controller.js";
+
+// import {listarTareas} from "../controllers/tareas.controller.js";
+// import {listarTarea} from "../controllers/tareas.controller.js";
+// import {crearTarea} from "../controllers/tareas.controller.js";
+// import {actualizarTarea} from "../controllers/tareas.controller.js";
+// import {eliminarTarea} from "../controllers/tareas.controller.js";
 
 const router = Router();
 
