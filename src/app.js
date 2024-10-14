@@ -3,11 +3,14 @@ import express from "express";
 import morgan from "morgan";
 import tareasRoutes from "./router/tareas.routes.js"
 import authRoutes from "./router/auth.routes.js"
+import cookieParser from 'cookie-parser';
+
 
 const app = express();
 
 //Middlewares
 app.use(morgan("dev")); //Mensajes mas limpios y cortos
+app.use(cookieParser());
 app.use(express.json());//Convertir todas las petisiones en formato json
 app.use(express.urlencoded({extended: false})); //para codificar y le decimos que la extencion de formularion la ponemos en false porque son cortos, si son grandes iria en true
 
